@@ -8,7 +8,7 @@ namespace McrDigital.Bootcamp1.Cards.Tests
         [Fact]
         public void ShouldGetDeckInOrderAndReturn52CardsCorrectlyFormatted()
         {
-            var encapsulation = new Cards();
+            var deck = new PlayingCardDeck();
             Assert.Equal(
                 new string[]
                 {
@@ -65,7 +65,7 @@ namespace McrDigital.Bootcamp1.Cards.Tests
                     "queen of spades",
                     "king of spades"
                 },
-                encapsulation.GetCards());
+                deck.SetCards());
         }
     }
 }
