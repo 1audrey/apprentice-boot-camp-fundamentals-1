@@ -3,7 +3,7 @@ namespace McrDigital.Bootcamp1.Cards
     using System;
     using System.Collections.Generic;
 
-    public class AnimalDeck
+    public class AnimalDeck: Deck
     {
         private readonly List<AnimalCard> _cards;
 

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace McrDigital.Bootcamp1.Cards
 {
-    public class PlayingCardDeck
+    public class PlayingCardDeck: Deck
     {
 
         private List<PlayingCard> deck;
