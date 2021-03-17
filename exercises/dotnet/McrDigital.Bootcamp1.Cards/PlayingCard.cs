@@ -20,5 +20,9 @@ namespace McrDigital.Bootcamp1.Cards
             get { return _cardSuit; }
             set { _cardSuit = value; }
         }
+
+        public string getCard() {
+            return $"{_cardValue} of {_cardSuit}";
+        }
     }
 }

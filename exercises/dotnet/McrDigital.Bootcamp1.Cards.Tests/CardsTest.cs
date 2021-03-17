@@ -2,6 +2,8 @@ namespace McrDigital.Bootcamp1.Cards.Tests
 {
     using Xunit;
     using McrDigital.Bootcamp1.Cards;
+    using System.Collections.Generic;
+
 
     public class CardsTest
     {
@@ -9,63 +11,64 @@ namespace McrDigital.Bootcamp1.Cards.Tests
         public void ShouldGetDeckInOrderAndReturn52CardsCorrectlyFormatted()
         {
             var deck = new PlayingCardDeck();
-            Assert.Equal(
-                new string[]
-                {
-                    "ace of clubs",
-                    "2 of clubs",
-                    "3 of clubs",
-                    "4 of clubs",
-                    "5 of clubs",
-                    "6 of clubs",
-                    "7 of clubs",
-                    "8 of clubs",
-                    "9 of clubs",
-                    "10 of clubs",
-                    "jack of clubs",
-                    "queen of clubs",
-                    "king of clubs",
-                    "ace of diamonds",
-                    "2 of diamonds",
-                    "3 of diamonds",
-                    "4 of diamonds",
-                    "5 of diamonds",
-                    "6 of diamonds",
-                    "7 of diamonds",
-                    "8 of diamonds",
-                    "9 of diamonds",
-                    "10 of diamonds",
-                    "jack of diamonds",
-                    "queen of diamonds",
-                    "king of diamonds",
-                    "ace of hearts",
-                    "2 of hearts",
-                    "3 of hearts",
-                    "4 of hearts",
-                    "5 of hearts",
-                    "6 of hearts",
-                    "7 of hearts",
-                    "8 of hearts",
-                    "9 of hearts",
-                    "10 of hearts",
-                    "jack of hearts",
-                    "queen of hearts",
-                    "king of hearts",
-                    "ace of spades",
-                    "2 of spades",
-                    "3 of spades",
-                    "4 of spades",
-                    "5 of spades",
-                    "6 of spades",
-                    "7 of spades",
-                    "8 of spades",
-                    "9 of spades",
-                    "10 of spades",
-                    "jack of spades",
-                    "queen of spades",
-                    "king of spades"
-                },
-                deck.SetCards());
+            var cards = deck.SetCards();
+            var deckInOrder = deck.getDeck(cards);
+
+            List<PlayingCard> expected = new List<PlayingCard>() {
+                    new PlayingCard {CardValue = "ace", CardSuit = "clubs" },
+                    new PlayingCard {CardValue = "2", CardSuit = "clubs" },
+                    new PlayingCard {CardValue = "3", CardSuit = "clubs" },
+                    new PlayingCard {CardValue = "4", CardSuit = "clubs" },
+                    new PlayingCard {CardValue = "5", CardSuit = "clubs" },
+                    new PlayingCard {CardValue = "6", CardSuit = "clubs" },
+                    new PlayingCard {CardValue = "7", CardSuit = "clubs" },
+                    new PlayingCard {CardValue = "8", CardSuit = "clubs" },
+                    new PlayingCard {CardValue = "9", CardSuit = "clubs" },
+                    new PlayingCard {CardValue = "10", CardSuit = "clubs" },
+                    new PlayingCard {CardValue = "jack", CardSuit = "clubs" },
+                    new PlayingCard {CardValue = "queen", CardSuit = "clubs" },
+                    new PlayingCard {CardValue = "king", CardSuit = "clubs" },
+                    new PlayingCard {CardValue = "ace", CardSuit = "diamonds" },
+                    new PlayingCard {CardValue = "2", CardSuit = "diamonds" },
+                    new PlayingCard {CardValue = "3", CardSuit = "diamonds" },
+                    new PlayingCard {CardValue = "4", CardSuit = "diamonds" },
+                    new PlayingCard {CardValue = "5", CardSuit = "diamonds" },
+                    new PlayingCard {CardValue = "6", CardSuit = "diamonds" },
+                    new PlayingCard {CardValue = "7", CardSuit = "diamonds" },
+                    new PlayingCard {CardValue = "8", CardSuit = "diamonds" },
+                    new PlayingCard {CardValue = "9", CardSuit = "diamonds" },
+                    new PlayingCard {CardValue = "10", CardSuit = "diamonds" },
+                    new PlayingCard {CardValue = "jack", CardSuit = "diamonds" },
+                    new PlayingCard {CardValue = "queen", CardSuit = "diamonds" },
+                    new PlayingCard {CardValue = "king", CardSuit = "diamonds" },
+                    new PlayingCard {CardValue = "ace", CardSuit = "hearts" },
+                    new PlayingCard {CardValue = "2", CardSuit = "hearts" },
+                    new PlayingCard {CardValue = "3", CardSuit = "hearts" },
+                    new PlayingCard {CardValue = "4", CardSuit = "hearts" },
+                    new PlayingCard {CardValue = "5", CardSuit = "hearts" },
+                    new PlayingCard {CardValue = "6", CardSuit = "hearts" },
+                    new PlayingCard {CardValue = "7", CardSuit = "hearts" },
+                    new PlayingCard {CardValue = "8", CardSuit = "hearts" },
+                    new PlayingCard {CardValue = "9", CardSuit = "hearts" },
+                    new PlayingCard {CardValue = "10", CardSuit = "hearts" },
+                    new PlayingCard {CardValue = "jack", CardSuit = "hearts" },
+                    new PlayingCard {CardValue = "queen", CardSuit = "hearts" },
+                    new PlayingCard {CardValue = "king", CardSuit = "hearts" },
+                    new PlayingCard {CardValue = "ace", CardSuit = "spades" },
+                    new PlayingCard {CardValue = "2", CardSuit = "spades" },
+                    new PlayingCard {CardValue = "3", CardSuit = "spades" },
+                    new PlayingCard {CardValue = "4", CardSuit = "spades" },
+                    new PlayingCard {CardValue = "5", CardSuit = "spades" },
+                    new PlayingCard {CardValue = "6", CardSuit = "spades" },
+                    new PlayingCard {CardValue = "7", CardSuit = "spades" },
+                    new PlayingCard {CardValue = "8", CardSuit = "spades" },
+                    new PlayingCard {CardValue = "9", CardSuit = "spades" },
+                    new PlayingCard {CardValue = "10", CardSuit = "spades" },
+                    new PlayingCard {CardValue = "jack", CardSuit = "spades" },
+                    new PlayingCard {CardValue = "queen", CardSuit = "spades" },
+                    new PlayingCard {CardValue = "king", CardSuit = "spades" }
+                };
+            Assert.Equal(expected, deckInOrder);
         }
     }
 }

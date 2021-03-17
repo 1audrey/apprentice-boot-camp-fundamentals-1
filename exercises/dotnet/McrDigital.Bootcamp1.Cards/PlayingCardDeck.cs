@@ -7,24 +7,28 @@ namespace McrDigital.Bootcamp1.Cards
     public class PlayingCardDeck
     {
 
-        //private List<PlayingCard> _cards;
+        private List<PlayingCard> deck;
 
-        /*
-        public List<PlayingCard> getDeck(string[] cards) {
+        
+        public List<PlayingCard> getDeck(PlayingCard[] cards) {
+            
+            deck = new List<PlayingCard>();
 
-            List<PlayingCard> deck = new List<PlayingCard>();
+            //List<PlayingCard> deck = new List<PlayingCard>();
 
-            foreach (string card in cards) {
+            foreach (PlayingCard card in cards) {
                 deck.Add(card);
             }
+
+            return deck;
         }
-        */
         
-        public string[] SetCards()
+        
+        public PlayingCard[] SetCards()
         {
             var deck = new int[52][];
-            //var result = new PlayingCard[52];
-            var result = new string[52];
+            var result = new PlayingCard[52];
+            //var result = new string[52];
 
             for (var suit = 0; suit < 4; suit++)
             {
@@ -37,17 +41,18 @@ namespace McrDigital.Bootcamp1.Cards
             int cardNumber = 0;
             string cardValue = "";
             string cardSuit = "";
-            //PlayingCard playingCard = new PlayingCard();
 
             foreach (var card in deck)
             {
+                PlayingCard playingCard = new PlayingCard();
                 cardValue = setCardValue(card[1]);
                 cardSuit = setSuitValue(card[0]);
 
-                //playingCard.CardValue = cardValue;
-                //playingCard.CardSuit = cardSuit;
+                playingCard.CardValue = cardValue;
+                playingCard.CardSuit = cardSuit;
+                playingCard.getCard();
 
-                result[cardNumber] = $"{cardValue} of {cardSuit}";
+                result[cardNumber] = playingCard;
                 cardNumber++;
             }
 
